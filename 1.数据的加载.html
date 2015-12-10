@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>HelloWorld</title>
+</head>
+<body>
+<p>Hello World 1</p>
+<p>Hello World 2</p>
+</body>
+<script src="js/d3.min.js" charset="utf-8"></script>
+<script>
+    var str = 'chenxinxin';
+    var data = ['chenxin','doudou'];
+    var p =d3.select("body")
+            .selectAll("p");
+    p.data(data);//数据绑定的常用方法绑定的
+    //p.datum(str); 绑定的另一种方法
+    p.text(function(d,i){
+        return 'hello'+' '+d;
+    });
+    p.style("color","blue");
+</script>
+</html>

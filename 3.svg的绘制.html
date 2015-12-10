@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>HelloWorld</title>
+</head>
+<body>
+<svg>
+    <rect height="" width=""></rect>
+</svg>
+</body>
+<script src="js/d3.min.js" charset="utf-8"></script>
+<script>
+    var dataset = [250,210,170,150,90];
+    var rectHeigth = 25;
+    var height = 300;
+    var width = 500;
+    var svg = d3.select("body")
+            .select("svg")
+            .attr("width",width)
+            .attr("height",height);
+    svg.selectAll("rect")
+            .data(dataset)
+            .enter()
+            .append("rect")
+            .attr("x",20)
+            .attr("y",function(d,i){
+                return i*rectHeigth;
+            })
+            .attr("width",function(d){
+                return d;
+            })
+            .attr("height",function(d,i){
+                return rectHeigth-2;
+            })
+            .attr("fill","blue");
+</script>
+</html>

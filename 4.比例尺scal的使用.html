@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>HelloWorld</title>
+</head>
+<body>
+</body>
+<script src="js/d3.min.js" charset="utf-8"></script>
+<script>
+    //线性比例尺的映射
+    var data = [1.3,2,4,18,34,67,68,79];
+    var min = d3.min(data);//找出数组中的最小值
+    var max = d3.max(data);//找出数组中的最大值
+    var liner = d3.scale.linear()//这是线性的比例尺
+            .domain([min,max])//值域
+            .range([5,300]);//定义域 建立了数据对于0~300的线性映射
+    var a = liner(1.3);//d3.scale.linear() 的返回值，是可以当做函数来使用的。因此，才有这样的用法：linear(1.3)。
+    //序数比例尺的映射
+    //啥玩意是序数比例尺？就是为了解决那种离散的映射关系的，比如a=[1,2,3,4,5,],b=['red','blue','black','white','pink'] ,让他们一一对应
+    var index=[1,2,3,4,5];
+    var color=['red','blue','black','white','pink'];
+    var ordinal = d3.scale.ordinal()
+            .domain(index)
+            .range(color);
+    var b = ordinal (2);//这个值就可以引用在数据中
+    //
+
+
+</script>
+</html>

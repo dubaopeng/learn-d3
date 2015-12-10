@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>线图的创建</title>
+    <script src="js/d3.min.js" charset="utf-8"></script>
+</head>
+<script>
+    function linerChats(){
+        var _chats = {};
+        var _height = 300;
+        var _width = 600;
+        var _margins = {
+            top:30,
+            right:30,
+            bottom:30,
+            left:30
+        }
+        var _x,_y,_data=[],_svg,_line,_bodyG,
+            _color = d3.scale.category10();
+
+        _chats.height = function(h){
+            if(!arguments.length) return _height;
+            _height = h;
+            return _chats;
+        }
+
+        _chats.margin = function(m){
+            if(!arguments.length) return _margins;
+            _margins = m;
+            return _chats;
+        }
+
+
+
+
+
+        //图表渲染函数
+        _chats.render = function(){
+            if(!_svg){
+                _svg = d3.select("body").append("svg")
+                        .attr("height",_height)
+                        .attr("width",_width)
+                renderAxes();
+                renderBodyClip();
+            }
+            renderBody();
+
+        }
+        //坐标轴渲染函数
+        function renderAxes(){
+
+
+        }
+        //图标主体渲染函数
+        function renderBody(){
+
+        }
+        //线条渲染函数
+        function renderLines(){
+
+        }
+        //数据点渲染函数
+        function renderDots(){
+
+        }
+        return _chats;
+
+    }
+</script>
+<body>
+
+</body>
+</html>
